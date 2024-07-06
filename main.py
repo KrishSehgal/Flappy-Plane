@@ -17,7 +17,7 @@ class Game:
 		self.collision_sprites = pygame.sprite.Group()
 
 		# scale factor
-		bg_height = pygame.image.load('graphics/environment/background.png').get_height()
+		bg_height = pygame.image.load('background.png').get_height()
 		self.scale_factor = WINDOW_HEIGHT / bg_height
 
 		# sprite setup 
@@ -30,16 +30,15 @@ class Game:
 		pygame.time.set_timer(self.obstacle_timer,1400)
 
 		# text
-		self.font = pygame.font.Font('graphics/font/BD_Cartoon_Shout.ttf',30)
 		self.score = 0
 		self.start_offset = 0
 
 		# menu
-		self.menu_surf = pygame.image.load('graphics/ui/menu.png').convert_alpha()
+		self.menu_surf = pygame.image.load('menu.png').convert_alpha()
 		self.menu_rect = self.menu_surf.get_rect(center = (WINDOW_WIDTH / 2,WINDOW_HEIGHT / 2))
 
 		# music 
-		self.music = pygame.mixer.Sound('sounds/music.wav')
+		self.music = pygame.mixer.Sound('music.wav')
 		self.music.play(loops = -1)
 
 	def collisions(self):
